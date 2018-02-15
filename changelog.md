@@ -4,6 +4,7 @@
 #Changes added newest last
 
 Changelog:
-Josh: Created changelog
+Josh:   Created changelog
 Martin: Added Tasks model
 Martin: Added models to autoload
+Josh:   Added homepage features
