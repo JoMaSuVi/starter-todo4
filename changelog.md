@@ -5,3 +5,5 @@
 
 Changelog:
 Josh: Created changelog
+Martin: Added Tasks model
+Martin: Added models to autoload
