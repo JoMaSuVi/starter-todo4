@@ -10,3 +10,4 @@ Martin: Added models to autoload
 Josh:   Added homepage features
 Martin: Added Views controller
 Martin: Added ordered list page features
+Josh:   Created maintenance page
