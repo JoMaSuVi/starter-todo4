@@ -15,7 +15,29 @@ class Views extends Application {
 
     function makeCategorizedPanel() {
         $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
-        return $this->parser->parse('by_category', $parms, true);
+        // INSERT the next two lines
+        $role = $this->session->userdata('userrole');
+        $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
+        return $this->parser->parse('by_priority', $parms, true);
+    }
+
+    // complete flagged items
+    function complete() {
+        $role = $this->session->userdata('userrole');
+        if ($role != ROLE_OWNER)
+            redirect('/views');
+
+        // loop over the post fields, looking for flagged tasks
+        foreach ($this->input->post() as $key => $value) {
+            if (substr($key, 0, 4) == 'task') {
+                // find the associated task
+                $taskid = substr($key, 4);
+                $task = $this->tasks->get($taskid);
+                $task->status = 2; // complete
+                $this->tasks->update($task);
+            }
+        }
+        $this->index();
     }
 
     function makePrioritizedPanel($tasks) {
@@ -38,6 +60,9 @@ class Views extends Application {
 
         // and then pass them on
         $parms = ['display_tasks' => $converted];
+
+        $role = $this->session->userdata('userrole');
+        $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
         return $this->parser->parse('by_priority', $parms, true);
     }
 
