@@ -17,3 +17,4 @@ Josh:   Added user switching to navigation bar
 Josh:   Added user display to maintenance page
 Josh:   Added form submission to work page
 Josh:   Added functionality so that owner can complete tasks, guest cannot
+Josh:   Fixed .gitignore
