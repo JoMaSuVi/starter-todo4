@@ -12,3 +12,4 @@ Martin: Added Views controller
 Martin: Added ordered list page features
 Josh:   Created maintenance page
 Martin: Created help wanted page
+Josh:   Added pagination to the maintenance page
