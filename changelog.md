@@ -20,3 +20,4 @@ Josh:   Added functionality so that owner can complete tasks, guest cannot
 Josh:   Fixed .gitignore
 Martin: Added role specific functionality to maintenence page
 Martin: Added Task Item Maintenance
+Martin: Polished up Item Maintenance
