@@ -27,6 +27,17 @@ class Tasks extends CSV_Model {
         return $converted;
     }
 
+    // provide form validation rules
+    public function rules() {
+        $config = array(
+            ['field' => 'task', 'label' => 'TODO task', 'rules' => 'alpha_numeric_spaces|max_length[64]'],
+            ['field' => 'priority', 'label' => 'Priority', 'rules' => 'integer|less_than[4]'],
+            ['field' => 'size', 'label' => 'Task size', 'rules' => 'integer|less_than[4]'],
+            ['field' => 'group', 'label' => 'Task group', 'rules' => 'integer|less_than[5]'],
+        );
+        return $config;
+    }
+
 }
 
 // return -1, 0, or 1 of $a's category name is earlier, equal to, or later than $b's
