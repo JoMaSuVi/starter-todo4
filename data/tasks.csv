@@ -1,5 +1,5 @@
 id,task,priority,size,group,deadline,status,flag
-1,"COMP1234 assignment",3,2,2,20170219,2,
+1,nothing,3,2,2,20170219,2,,"Update the TODO task"
 2,"Mow the lawn",2,2,1,,2,
 3,"Wash the car",2,2,1,,2,
 4,"Paint the fence",1,2,1,,,
