@@ -55,11 +55,23 @@ class Tasks extends XML_Model {
         $this->reindex();
         //---------------------
 
-        if (($handle = fopen($this->_origin, "w")) !== FALSE) {
+        $newDoc = new SimpleXMLElement();
 
-            fputcsv($handle, $this->_fields);
-            foreach ($this->_data as $key => $record)
-                fputcsv($handle, array_values((array) $record));
+        if (($handle = fopen($this->_origin, "w")) !== FALSE) {
+            $doc = new DOMDocument();
+            $doc->formatOutput = true;
+
+            $root = $doc->createElement("tasks");
+            $root = $doc->appendChild($root);
+
+            foreach ($this->_data as $key => $record) {
+                $container = $doc->createElement("task");
+
+                $root->appendChild($container);
+            }
+            
+            $strXML = $doc->saveXML();
+            fwrite($handle, $strXML);
             fclose($handle);
         }
         // --------------------
