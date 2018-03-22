@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tasks>
+    <task>
+        <id>3</id>
+        <task>"Wash the car"</task>
+        <priority>2</priority>
+        <size>2</size>
+        <group>1</group>
+        <deadline></deadline>
+        <status>2</status>
+        <flag></flag>
+    </task>
+    <task>
+        <id>7</id>
+        <task>"Canucks hockey game"</task>
+        <priority>3</priority>
+        <size>3</size>
+        <group>4</group>
+        <deadline>20170305</deadline>
+        <status>2</status>
+        <flag></flag>
+    </task>
+    <task>
+        <id>9</id>
+        <task>"Learn French"</task>
+        <priority>1</priority>
+        <size>3</size>
+        <group>3</group>
+        <deadline>20161231</deadline>
+        <status>1</status>
+        <flag></flag>
+    </task>
+    <task>
+        <id>13</id>
+        <task>"Buy Milk and Bread"</task>
+        <priority>2</priority>
+        <size>1</size>
+        <group>1</group>
+        <deadline></deadline>
+        <status></status>
+        <flag>1</flag>
+    </task>
+    <task>
+        <id>14</id>
+        <task>"Read War and Peace"</task>
+        <priority>1</priority>
+        <size>3</size>
+        <group>1</group>
+        <deadline></deadline>
+        <status></status>
+        <flag></flag>
+    </task>
+    <task>
+        <id>15</id>
+        <task>"Organize the study"</task>
+        <priority>1</priority>
+        <size>4</size>
+        <group>1</group>
+        <deadline></deadline>
+        <status></status>
+        <flag></flag>
+    </task>
+</tasks>
