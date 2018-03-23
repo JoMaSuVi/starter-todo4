@@ -51,30 +51,25 @@ class Tasks extends XML_Model {
 
     function store() {
 
-        // rebuild the keys table
-        $this->reindex();
-        //---------------------
-
-        $newDoc = new SimpleXMLElement();
-
         if (($handle = fopen($this->_origin, "w")) !== FALSE) {
-            $doc = new DOMDocument();
-            $doc->formatOutput = true;
-
-            $root = $doc->createElement("tasks");
-            $root = $doc->appendChild($root);
-
-            foreach ($this->_data as $key => $record) {
-                $container = $doc->createElement("task");
-
-                $root->appendChild($container);
+            $xmlDoc = new DOMDocument("1.0");
+            $xmlDoc->preserveWhiteSpace = false;
+            $xmlDoc->formatOutput = true;
+            $data = $xmlDoc->createElement("tasks");
+            foreach ($this->_data as $key => $value) {
+                $task = $xmlDoc->createElement("task");
+                foreach ($value as $itemkey => $record) {
+                    $item = $xmlDoc->createElement($itemkey, htmlspecialchars($record));
+                    $task->appendChild($item);
+                }
+                $data->appendChild($task);
             }
+            $xmlDoc->appendChild($data);
+            $xmlDoc->saveXML($xmlDoc);
+            $xmlDoc->save($this->_origin);
             
-            $strXML = $doc->saveXML();
-            fwrite($handle, $strXML);
             fclose($handle);
         }
-        // --------------------
     }
 
     // provide form validation rules
